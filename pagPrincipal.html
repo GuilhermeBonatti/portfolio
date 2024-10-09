@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Guilherme Bonatti</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .estiloBotao {
+            background-color: #121212;
+            padding: 7px 10px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #E0F7FA;
+            text-align: center;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #E0E0E0;
+            background: #121212;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        header {
+            width: 100%;
+            padding: 20px;
+            background-color: #1E1E1E;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+        header h1 {
+            color: #E0F7FA;
+            font-size: 2em;
+        }
+        nav a {
+            color: #E0E0E0;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+        nav a:hover {
+            color: #E0F7FA;
+            transition: color 0.3s ease;
+        }
+        .container {
+            margin-top: 120px;
+            max-width: 800px;
+            width: 90%;
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        section.visivel {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .sobre h2, .habilidades h2, .projetos h2 {
+            color: #E0F7FA;
+            margin-bottom: 20px;
+            font-size: 28px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #E0F7FA;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .sobre p, .habilidades ul, .projetos .cartao-projeto {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .habilidades ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .habilidades ul li {
+            background-color: #333;
+            margin: 10px;
+            padding: 15px 25px;
+            border-radius: 50px;
+            color: #E0E0E0;
+            transition: transform 0.3s ease;
+        }
+        .habilidades ul li:hover {
+            transform: scale(1.1);
+            background-color: #E0F7FA;
+            color: #121212;
+        }
+        .cartao-projeto {
+            background-color: #333;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #E0E0E0;
+        }
+        .cartao-projeto:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.6);
+            background-color: #444;
+        }
+        .cartao-projeto h3 {
+            color: #E0F7FA;
+        }
+        .cartao-projeto p {
+            margin-top: 10px;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+        .cartao-projeto button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #E0F7FA;
+            color: #121212;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .cartao-projeto button:hover {
+            background-color: #B2EBF2;
+        }
+        .destaque {
+            background-color: #E0F7FA;
+            color: #121212;
+            padding: 0 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Guilherme Bonatti</h1> <br>
+        <nav>
+            <a href="#sobre">Sobre Mim</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#projetos">Projetos</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="sobre" class="sobre">
+            <h2>Sobre Mim</h2>
+            <p>Me chamo Guilherme, sou estudante de <span class="destaque">Análise e Desenvolvimento de Sistemas</span>, estou empenhado
+             e entusiasmado a entender e criar soluções tecnológicas inovadoras. 
+             Estou sempre em busca de melhorar minhas <span class="destaque">habilidades de resolução</span>,
+            de problemas e raciocínio lógico. Tenho grande interesse em aprender e ingressar numa equipe que aborda
+            sobre novas tecnologias e práticas da indústria para estar preparado sempre para os desafios do mercado!</p>
+        </section>
+
+        <section id="habilidades" class="habilidades">
+            <h2>Habilidades</h2>
+            <ul>
+                <li>HTML5 - Estrutura de páginas acessíveis e responsivas</li>
+                <li>CSS3 - Design moderno com animações e transições</li>
+                <li>JavaScript - Funcionalidade dinâmica e interatividade</li>
+                <li>Git - Controle de versão e colaboração em equipe</li>
+                <li>Banco de Dados - Estrutura organizada para armazenamento</li>
+                <li>Metodologias Ágeis - Abordagens flexíveis para o gerenciamento de projetos</li>
+                <li>Desenvolvimento Gráfico - Criação de elementos visuais e interfaces</li>
+            </ul>
+        </section>
+
+        <section id="projetos" class="projetos">
+            <h2>Projetos</h2>
+            <div class="cartao-projeto">
+                <h3>Projeto 1: Portfólio Interativo</h3>
+                <p>Desenvolvi um portfólio utilizando tecnologias web modernas para destacar minhas habilidades e projetos. Este projeto inclui animações e um design responsivo para garantir uma experiência agradável em qualquer dispositivo.</p>
+            </div>
+            <div class="cartao-projeto">
+                <h3>Projeto 2: Gamificação</h3>
+                <p>Desenvolvi uma gamificação com o nome de "Matemágica" cujo objetivo é o aprendizado infantil.
+                    Utilizei Inkscape, Piskel e Construct 3 para o desenvolvimento do mesmo. Foi pensado em estratégias
+                    e conceitos pedagógicos que os professores utilizam para ensinar as crianças, logo, utilizamos a mesma
+                    estratégia na gamificação. 
+                </p> <br>
+                <a href="https://www.construct.net/en/free-online-games/matemagica-59210/play" target="_blank" class="estiloBotao">Link para a gamificação</a>
+            </div>
+            <div class="cartao-projeto">
+                <h3>Projeto 3: Cadastro de Usuário</h3>
+                <p>O código apresentado é uma implementação simples de um sistema de cadastro
+                    de usuário em HTML, CSS e JavaScript. Ele consiste em um formulário que permite
+                    ao usuário inserir um nome de usuário e uma senha, com validação para garantir
+                    que o nome de usuário não seja duplicado.
+                    </p> <br>
+                <a href="cadastra.html" class="estiloBotao">Link para o Cadastro de Usuários</a>
+
+            </div>
+
+        </section>
+    </div>
+
+    <script>
+        // Efeito de rolagem animada
+        document.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const sectionPosition = section.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                if(sectionPosition < screenPosition) {
+                    section.classList.add('visivel');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

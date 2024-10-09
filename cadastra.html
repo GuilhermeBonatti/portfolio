@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Cadastro de Usuário</title>
+    <style>
+        body {
+            background-color: #121212; /* Cor de fundo gelo */
+            color: #E0F7FA; /* Cor de texto gelo */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.1); /* Fundo com leve transparência */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #e0ffff;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #e0ffff;
+            color: #333;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #b0e0e6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Cadastro de Usuário</h2>
+    <form id="formularioCadastro">
+        <input type="text" id="nomeUsuario" placeholder="Nome de Usuário" required>
+        <input type="password" id="senha" placeholder="Senha" required>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <p id="mensagem"></p>
+</div>
+
+<script>
+    const formulario = document.getElementById('formularioCadastro');
+    const mensagem = document.getElementById('mensagem');
+    
+    let usuarios = [];
+
+    formulario.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const nomeUsuario = document.getElementById('nomeUsuario').value;
+        const senha = document.getElementById('senha').value;
+
+        if (usuarios.some(usuario => usuario.nomeUsuario === nomeUsuario)) {
+            mensagem.textContent = 'Usuário já existe!';
+            mensagem.style.color = 'red';
+        } else {
+            usuarios.push({ nomeUsuario, senha });
+            mensagem.textContent = 'Cadastro realizado com sucesso!';
+            mensagem.style.color = 'green';
+            formulario.reset();
+        }
+    });
+</script>
+
+</body>
+</html>
